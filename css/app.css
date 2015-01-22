@@ -1,0 +1,121 @@
+/* app css stylesheet */
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: '700';
+
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: '400';
+  background: #EFF0F1;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+h2 {
+font-size: 22px;
+font-weight: 400;
+margin: 0.4em 0;
+}
+
+header {
+  background: #287CCB;
+  padding: 20px;
+  padding-top: 100px;
+  color: white;
+}
+
+
+header.extra {
+  margin-bottom: 62px;
+}
+
+.player img {
+  height: 100%;
+  border-radius: 100%;
+  border: 1px solid white;
+  height: 65px;
+  width: 65px;
+}
+
+li.player {
+display: inline-block;
+width: 100%;
+border-bottom: 1px solid rgba(0,0,0,0.2);
+padding: 30px 0;
+color: #505659;
+}
+
+ul.players {
+max-width: 600px;
+margin: 0 auto;
+padding: 0;
+}
+
+input {
+padding: 20px;
+margin-left: -1em;
+width: 100%;
+outline: 0;
+border: 0;
+}
+
+select {
+outline: 0 !important;
+width: 105%;
+border: 1px solid #111;
+background: transparent;
+padding: 20px;
+font-size: 16px;
+border: 0;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+background: url('../img/dropdown_arrow.gif') 96% / 18px no-repeat #fff;
+border-left: 1px solid rgba(0,0,0,0.2);
+border-radius: 0;
+} 
+
+#filterer {
+  background: white;
+  display: inline;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  font-size: 16px;
+}
+
+#filterer.sticky {
+  position: fixed;
+  width: 100%;
+  top: 10;
+  z-index: 999;
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" ng-app="canucksApp">
+<head>
+  <meta charset="utf-8">
+  <title>381 Lab 2 - Angular App MVC</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+</head>
+<body ng-controller="PlayersController">
+
+  <header>
+    <h1>Canucks Roster</h1>
+  </header>
+
+  <div id="filterer">
+    <div class="col-sm-8">
+          <input ng-model="query" placeholder="Search">
+    </div>
+
+    <div class="col-sm-4">
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="position">Position</option>
+        <option value="age">Age</option>
+        <option value="Nationality">Nationality</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="content">
+
+      <div class="col-md-12">
+        <!--Body content-->
+
+        <ul class="players">
+          <li class="player" ng-repeat="player in players | filter:query | orderBy:orderProp">
+            <div class="col-xs-3">
+              <img ng-src="{{player.img}}">
+            </div>
+            <div class="col-xs-9">
+              <h2>{{player.name}}</h2>
+              <p>{{player.position}}</p>
+              <p>{{player.age}}</p>
+              <p>{{player.Nationality}}</p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+  </div>
+
+  <script>
+    $(document).scroll(function() {
+      var d = $(document).scrollTop();
+      if (d >= 146) {
+        $("#filterer").addClass("sticky");
+        $("header").addClass("extra");
+      } else {
+        $("#filterer").removeClass("sticky");
+        $("header").removeClass("extra");
+      }
+    })
+  </script>
+
+</body>
+</html>
